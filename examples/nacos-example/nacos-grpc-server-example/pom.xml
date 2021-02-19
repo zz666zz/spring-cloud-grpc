@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>nacos-example</artifactId>
-        <groupId>com.springcloud.grpc</groupId>
+        <groupId>com.github.zz666zz</groupId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -15,17 +15,17 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.springcloud.grpc</groupId>
+            <groupId>com.github.zz666zz</groupId>
             <artifactId>spring-cloud-grpc-server-core-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.springcloud.grpc</groupId>
+            <groupId>com.github.zz666zz</groupId>
             <artifactId>example-common-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.springcloud.grpc</groupId>
+            <groupId>com.github.zz666zz</groupId>
             <artifactId>spring-cloud-grpc-discover-nacos-starter</artifactId>
             <version>${project.version}</version>
         </dependency>

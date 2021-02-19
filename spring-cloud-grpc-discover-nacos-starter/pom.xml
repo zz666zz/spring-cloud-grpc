@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-cloud-grpc</artifactId>
-        <groupId>com.springcloud.grpc</groupId>
+        <groupId>com.github.zz666zz</groupId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -14,7 +14,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.springcloud.grpc</groupId>
+            <groupId>com.github.zz666zz</groupId>
             <artifactId>spring-cloud-grpc-common</artifactId>
             <version>${project.version}</version>
         </dependency>
