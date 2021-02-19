@@ -1,0 +1,20 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package com.spring.cloud.grpc.examples.common.api;
+
+
+message LookMoneyRequest {
+    int32 userId = 1;
+}
+
+message LookMoneyResponse {
+    int32 userId = 1;
+    int32 money = 2;
+}
+
+service UserMoneyService {
+
+    rpc lookMoney(LookMoneyRequest) returns (LookMoneyResponse);
+
+}

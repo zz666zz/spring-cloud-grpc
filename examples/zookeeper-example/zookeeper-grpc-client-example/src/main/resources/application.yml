@@ -1,0 +1,26 @@
+server:
+  port: 29002
+
+spring:
+  application:
+    name: zookeeper-grpc-client-example
+  cloud:
+    zookeeper:
+      discovery:
+        register: false
+        root: /spring-cloud-grpc-registry/services
+      connect-string: 127.0.0.1:2181
+
+cloud:
+  grpc:
+    clients:
+      zookeeper-grpc-server-example:
+        negotiation-type: plaintext
+
+#opentracing:
+#  jaeger:
+#    enable: true
+#    http-sender:
+#      url: http://127.0.0.1:14268/api/traces
+#    log-spans: true
+

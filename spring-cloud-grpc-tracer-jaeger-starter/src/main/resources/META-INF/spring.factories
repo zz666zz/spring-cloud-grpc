@@ -1,0 +1,4 @@
+# AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.springcloud.grpc.tracer.jaeger.starter.server.GrpcJaegerServerAutoConfiguration,\
+com.springcloud.grpc.tracer.jaeger.starter.client.GrpcJaegerClientAutoConfiguration

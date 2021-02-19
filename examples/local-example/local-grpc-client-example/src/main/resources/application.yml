@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: local-grpc-client
+
+server:
+  port: 9999
+
+cloud:
+  grpc:
+    clients:
+      local-grpc-server-example:
+        address: 'static://127.0.0.1:13001'
+

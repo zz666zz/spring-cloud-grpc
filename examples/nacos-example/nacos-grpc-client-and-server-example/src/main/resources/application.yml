@@ -1,0 +1,20 @@
+server:
+  port: 9005
+
+cloud:
+  grpc:
+    server:
+      port: 13005
+    clients:
+      nacos-grpc-server-example:
+        negotiation-type: plaintext
+
+spring:
+  application:
+    name: nacos-grpc-client-and-server-example
+  cloud:
+    nacos:
+      discovery:
+        register-enabled: true
+        server-addr: 127.0.0.1:8848
+        namespace: 098988d8-24b0-4ffe-bcc1-1e30c9d99b62

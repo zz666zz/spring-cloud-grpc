@@ -1,0 +1,4 @@
+# AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.springcloud.grpc.server.core.starter.autoconfigure.GrpcServerAutoConfiguration,\
+com.springcloud.grpc.server.core.starter.autoconfigure.NettyGrpcServerFactoryAutoConfiguration

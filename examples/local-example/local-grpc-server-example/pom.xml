@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>local-example</artifactId>
+        <groupId>com.springcloud.grpc</groupId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>local-grpc-server-example</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.springcloud.grpc</groupId>
+            <artifactId>spring-cloud-grpc-server-core-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.springcloud.grpc</groupId>
+            <artifactId>example-common-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.26</version>
+        </dependency>
+
+        <!-- 使用logback作为具体的日志实现 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <!-- 这里面自带依赖一个1.7.25版本的slf4j-api -->
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.12</version>
+        </dependency>
+    </dependencies>
+
+</project>
