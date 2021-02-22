@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: zookeeper-grpc-client-example
+    name: zookeeper-jaeger-grpc-client-example
   cloud:
     zookeeper:
       discovery:
@@ -17,3 +17,9 @@ cloud:
       zookeeper-grpc-server-example:
         negotiation-type: plaintext
 
+opentracing:
+  jaeger:
+    enable: true
+    http-sender:
+      url: http://127.0.0.1:14268/api/traces
+    log-spans: true

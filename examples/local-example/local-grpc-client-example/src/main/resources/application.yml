@@ -3,7 +3,7 @@ spring:
     name: local-grpc-client
 
 server:
-  port: 9999
+  port: 8080
 
 cloud:
   grpc:

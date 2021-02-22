@@ -157,6 +157,7 @@ public class GrpcJaegerClientInterceptor implements ClientInterceptor {
                         delegate().onClose(status, trailers);
                     }
                 };
+
                 delegate().start(tracingResponseListener, headers);
             }
 

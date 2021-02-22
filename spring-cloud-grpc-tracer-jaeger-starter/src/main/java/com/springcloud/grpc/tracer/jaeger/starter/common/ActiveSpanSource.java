@@ -8,6 +8,11 @@ import io.opentracing.Span;
 public interface ActiveSpanSource {
 
     /**
+     * @return the active span
+     */
+    public Span getActiveSpan();
+
+    /**
      * ActiveSpanSource implementation that always returns
      *  null as the active span
      */
@@ -30,8 +35,5 @@ public interface ActiveSpanSource {
         }
     };
 
-    /**
-     * @return the active span
-     */
-    public Span getActiveSpan();
+
 }

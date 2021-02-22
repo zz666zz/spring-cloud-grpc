@@ -17,6 +17,7 @@
         <module>example-common-api</module>
         <module>nacos-example</module>
         <module>zookeeper-example</module>
+        <module>zookeeper-jaeger-example</module>
     </modules>
 
 

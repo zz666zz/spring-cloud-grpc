@@ -98,11 +98,9 @@ public class GrpcJaegerServerInterceptor implements ServerInterceptor {
         }
 
         Context ctxWithSpan = Context.current().withValue(OpenTracingContextKey.getKey(), span);
-        ServerCall.Listener<ReqT> listenerWithContext = Contexts
-                .interceptCall(ctxWithSpan, call, headers, next);
+        ServerCall.Listener<ReqT> nextListener = Contexts.interceptCall(ctxWithSpan, call, headers, next);
 
-        ServerCall.Listener<ReqT> tracingListenerWithContext =
-                new ForwardingServerCallListener.SimpleForwardingServerCallListener<ReqT>(listenerWithContext) {
+        ServerCall.Listener<ReqT> currentListener = new ForwardingServerCallListener.SimpleForwardingServerCallListener<ReqT>(nextListener) {
 
                     @Override
                     public void onMessage(ReqT message) {
@@ -131,7 +129,7 @@ public class GrpcJaegerServerInterceptor implements ServerInterceptor {
                     }
                 };
 
-        return tracingListenerWithContext;
+        return currentListener;
     }
 
     private Span getSpanFromHeaders(Map<String, String> headers, String operationName) {

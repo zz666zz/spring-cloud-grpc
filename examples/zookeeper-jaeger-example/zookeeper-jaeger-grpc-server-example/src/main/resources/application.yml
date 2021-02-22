@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9091
 
 cloud:
   grpc:
@@ -8,7 +8,7 @@ cloud:
 
 spring:
   application:
-    name: zookeeper-grpc-server-example
+    name: zookeeper-jaeger-grpc-server-example
   cloud:
     zookeeper:
       discovery:
@@ -16,3 +16,9 @@ spring:
         root: /spring-cloud-grpc-registry/services
       connect-string: 127.0.0.1:2181
 
+opentracing:
+  jaeger:
+    enable: true
+    http-sender:
+      url: http://127.0.0.1:14268/api/traces
+    log-spans: true

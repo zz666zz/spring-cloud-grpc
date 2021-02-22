@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package com.spring.cloud.grpc.examples.common.api;
+
+
+message LookUserInfoRequest {
+    int32 userId = 1;
+}
+
+message LookUserInfoResponse {
+    int32 userId = 1;
+    string name = 2;
+    int32 money = 3;
+}
+
+service UserInfoService {
+
+    rpc lookUserInfo(LookUserInfoRequest) returns (LookUserInfoResponse);
+
+}
