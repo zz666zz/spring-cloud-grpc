@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: metric-prometheus-server-example
+
+server:
+  port: 8099
+
+cloud:
+  grpc:
+    server:
+      port: 13001
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+  metrics:
+    tags:
+      application: metric-prometheus-server-example
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: '*'

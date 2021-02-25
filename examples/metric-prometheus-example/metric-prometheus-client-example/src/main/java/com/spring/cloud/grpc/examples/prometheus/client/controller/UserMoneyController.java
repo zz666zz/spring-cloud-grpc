@@ -1,4 +1,4 @@
-package com.spring.cloud.grpc.examples.mirometer.client.controller;
+package com.spring.cloud.grpc.examples.prometheus.client.controller;
 
 import com.spring.cloud.grpc.examples.common.api.LookMoneyRequest;
 import com.spring.cloud.grpc.examples.common.api.LookMoneyResponse;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class UserMoneyController {
 
-    @GrpcStub("metric-prometheus-server-example")
+    @GrpcStub("local-grpc-server-example")
     private UserMoneyServiceGrpc.UserMoneyServiceBlockingStub userMoneyServiceBlockingStub;
 
 
@@ -24,6 +24,20 @@ public class UserMoneyController {
         LookMoneyResponse response = null;
         try {
             response = userMoneyServiceBlockingStub.lookMoney(request);
+            return response.getMoney();
+        }catch (StatusRuntimeException s){
+            log.error("error: {}", s.getMessage(), s);
+        }
+        return 0;
+    }
+
+
+    @GetMapping("userMoney/lookMoney2")
+    public int look2(@RequestParam("id") Integer id) {
+        LookMoneyRequest request = LookMoneyRequest.newBuilder().setUserId(id).build();
+        LookMoneyResponse response = null;
+        try {
+            response = userMoneyServiceBlockingStub.lookMoney2(request);
             return response.getMoney();
         }catch (StatusRuntimeException s){
             log.error("error: {}", s.getMessage(), s);

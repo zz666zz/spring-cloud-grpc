@@ -17,4 +17,6 @@ service UserMoneyService {
 
     rpc lookMoney(LookMoneyRequest) returns (LookMoneyResponse);
 
+    rpc lookMoney2(LookMoneyRequest) returns (LookMoneyResponse);
+
 }
