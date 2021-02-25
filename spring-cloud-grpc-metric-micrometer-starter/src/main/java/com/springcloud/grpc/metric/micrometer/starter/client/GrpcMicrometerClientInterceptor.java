@@ -2,6 +2,7 @@ package com.springcloud.grpc.metric.micrometer.starter.client;
 
 import com.springcloud.grpc.common.util.GrpcUtil;
 import com.springcloud.grpc.metric.micrometer.starter.common.MetricConstants;
+import com.springcloud.grpc.metric.micrometer.starter.common.Utils;
 import io.grpc.*;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
@@ -87,24 +88,13 @@ public class GrpcMicrometerClientInterceptor implements ClientInterceptor {
                 .register(meterRegistry);
         grpcClientMetrics.setGrpcClientMethodResponseReceivedCounter(grpcClientMethodResponseReceivedCounter);
 
-        Function<Status.Code, Timer> methodCodeTimerFunction = createMethodCodeTimerFunction(method);
+        Function<Status.Code, Timer> methodCodeTimerFunction = Utils.createMethodCodeTimerFunction(method, this.meterRegistry, MetricConstants.METRIC_GRPC_CLIENT_METHOD_REQUEST_DURATION);
         grpcClientMetrics.setGrpcClientMethodCodeTimerFunction(methodCodeTimerFunction);
 
         return grpcClientMetrics;
     }
 
-    Function<Status.Code, Timer> createMethodCodeTimerFunction(MethodDescriptor<?, ?> method) {
-        final Map<Status.Code, Timer> cache = new EnumMap<>(Status.Code.class);
-        final Function<Status.Code, Timer> creator = code -> Timer.builder(MetricConstants.METRIC_GRPC_CLIENT_METHOD_REQUEST_DURATION)
-                .description("The total time taken for the client to complete the call")
-                .tag(MetricConstants.TAG_SERVICE_NAME, GrpcUtil.extractServiceName(method))
-                .tag(MetricConstants.TAG_METHOD_NAME, GrpcUtil.extractMethodName(method))
-                .tag(MetricConstants.TAG_METHOD_TYPE, method.getType().name())
-                .tag(MetricConstants.TAG_STATUS_CODE, code.name())
-                .register(this.meterRegistry);
-        final Function<Status.Code, Timer> cacheResolver = code -> cache.computeIfAbsent(code, creator);
-        return cacheResolver;
-    }
+
 
 
 

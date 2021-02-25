@@ -29,7 +29,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.github.zz666zz</groupId>
+            <artifactId>spring-cloud-grpc-metric-micrometer-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
 
 
