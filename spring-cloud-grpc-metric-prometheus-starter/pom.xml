@@ -10,17 +10,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-grpc-metric-micrometer-starter</artifactId>
+    <artifactId>spring-cloud-grpc-metric-prometheus-starter</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.github.zz666zz</groupId>
-            <artifactId>spring-cloud-grpc-common</artifactId>
+            <artifactId>spring-cloud-grpc-metric-micrometer-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>1.6.3</version>
         </dependency>
     </dependencies>
 

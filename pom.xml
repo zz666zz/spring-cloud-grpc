@@ -22,6 +22,7 @@
         <module>spring-cloud-grpc-discover-nacos-starter</module>
         <module>examples</module>
         <module>spring-cloud-grpc-metric-micrometer-starter</module>
+        <module>spring-cloud-grpc-metric-prometheus-starter</module>
     </modules>
 
     <licenses>
