@@ -3,22 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-cloud-grpc</artifactId>
+        <artifactId>examples</artifactId>
         <groupId>com.github.zz666zz</groupId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>examples</artifactId>
+    <artifactId>metric-mirometer-example</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>local-example</module>
-        <module>example-common-api</module>
-        <module>nacos-example</module>
-        <module>zookeeper-example</module>
-        <module>zookeeper-jaeger-example</module>
-        <module>metric-mirometer-example</module>
+        <module>metric-mirometer-client-example</module>
+        <module>metric-mirometer-server-example</module>
     </modules>
 
 

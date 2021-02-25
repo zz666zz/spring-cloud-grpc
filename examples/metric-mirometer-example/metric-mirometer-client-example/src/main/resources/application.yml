@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: local-grpc-client
+
+server:
+  port: 8080
+
+cloud:
+  grpc:
+    clients:
+      local-grpc-server-example:
+        address: 'static://127.0.0.1:13001'
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+  metrics:
+    tags:
+      application: metric-mirometer-client-example
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: '*'

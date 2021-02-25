@@ -1,0 +1,3 @@
+# AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.springcloud.grpc.metric.micrometer.starter.client.GrpcMicrometerClientAutoConfiguration

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: local-grpc-server-example
+
+server:
+  port: 8099
+
+cloud:
+  grpc:
+    server:
+      port: 13001

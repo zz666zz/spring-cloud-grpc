@@ -21,6 +21,7 @@
         <module>spring-cloud-grpc-discover-zookeeper-starter</module>
         <module>spring-cloud-grpc-discover-nacos-starter</module>
         <module>examples</module>
+        <module>spring-cloud-grpc-metric-micrometer-starter</module>
     </modules>
 
     <licenses>
