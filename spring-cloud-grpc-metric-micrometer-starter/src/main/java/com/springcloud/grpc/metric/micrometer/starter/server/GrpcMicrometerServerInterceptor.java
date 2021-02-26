@@ -1,5 +1,6 @@
 package com.springcloud.grpc.metric.micrometer.starter.server;
 
+import com.springcloud.grpc.common.constant.InterceptorOrder;
 import com.springcloud.grpc.common.util.GrpcUtil;
 import com.springcloud.grpc.metric.micrometer.starter.common.MetricConstants;
 import com.springcloud.grpc.metric.micrometer.starter.common.Utils;
@@ -7,6 +8,7 @@ import io.grpc.*;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Timer;
+import org.springframework.core.annotation.Order;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -15,6 +17,7 @@ import java.util.function.Function;
 /**
  * @author ZouZhen (shenmedoubuzhidaoa@gmail.com)
  */
+@Order(InterceptorOrder.ORDER_METRIC)
 public class GrpcMicrometerServerInterceptor implements ServerInterceptor {
 
     private MeterRegistry meterRegistry;

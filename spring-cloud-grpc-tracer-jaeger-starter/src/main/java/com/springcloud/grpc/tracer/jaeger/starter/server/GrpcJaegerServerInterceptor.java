@@ -1,6 +1,7 @@
 package com.springcloud.grpc.tracer.jaeger.starter.server;
 
 import com.google.common.collect.ImmutableMap;
+import com.springcloud.grpc.common.constant.InterceptorOrder;
 import com.springcloud.grpc.tracer.jaeger.starter.common.OpenTracingContextKey;
 import com.springcloud.grpc.tracer.jaeger.starter.common.OperationNameConstructor;
 import io.grpc.*;
@@ -10,12 +11,14 @@ import io.opentracing.Tracer;
 import io.opentracing.propagation.Format;
 import io.opentracing.propagation.TextMapAdapter;
 import io.opentracing.propagation.TextMapExtractAdapter;
+import org.springframework.core.annotation.Order;
 
 import java.util.*;
 
 /**
  * @author ZouZhen (shenmedoubuzhidaoa@gmail.com)
  */
+@Order(InterceptorOrder.ORDER_OPENTRACING)
 public class GrpcJaegerServerInterceptor implements ServerInterceptor {
 
     private final Tracer tracer;
